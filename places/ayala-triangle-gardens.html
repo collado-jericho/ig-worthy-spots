@@ -4,6 +4,143 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ayala Triangle Gardens - IG Worthy Spots</title>
+  <style>
+    :root {
+      --coffee-dark: #3b2419;
+      --coffee-medium: #6f4e37;
+      --coffee-light: #a9744f;
+      --cream: #faf3eb;
+      --cream-card: #fffaf3;
+      --accent: #c47a3d;
+      --text-muted: #6b5d54;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--cream);
+      color: var(--coffee-dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--coffee-dark);
+      color: var(--cream);
+      padding: 2rem 1.5rem 1.5rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 0.25rem;
+      font-size: 2rem;
+      letter-spacing: 0.5px;
+    }
+
+    header p {
+      margin: 0 0 1.25rem;
+      color: #e6d5c3;
+      font-style: italic;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: var(--cream);
+      text-decoration: none;
+      font-weight: 600;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      border-bottom-color: var(--accent);
+    }
+
+    main {
+      max-width: 680px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem;
+    }
+
+    main h1 {
+      text-align: center;
+      color: var(--coffee-medium);
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    main img {
+      display: block;
+      margin: 0 auto 1.75rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(59, 36, 25, 0.12);
+    }
+
+    main p {
+      color: var(--text-muted);
+      margin: 0 0 1.1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+      background-color: var(--cream-card);
+      border: 1px solid #eadfd2;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 0.85rem 1.1rem;
+    }
+
+    thead th {
+      background-color: var(--coffee-medium);
+      color: var(--cream);
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f5e9db;
+    }
+
+    tbody td:first-child {
+      font-weight: 600;
+      color: var(--coffee-dark);
+    }
+
+    tbody td {
+      color: var(--text-muted);
+      border-bottom: 1px solid #eadfd2;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-top: 1px solid #eadfd2;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
 
