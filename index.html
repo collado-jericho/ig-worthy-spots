@@ -4,6 +4,146 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IG Worthy Spots</title>
+  <style>
+    :root {
+      --coffee-dark: #3b2419;
+      --coffee-medium: #6f4e37;
+      --coffee-light: #a9744f;
+      --cream: #faf3eb;
+      --cream-card: #fffaf3;
+      --accent: #c47a3d;
+      --text-muted: #6b5d54;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--cream);
+      color: var(--coffee-dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--coffee-dark);
+      color: var(--cream);
+      padding: 2rem 1.5rem 1.5rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 0.25rem;
+      font-size: 2rem;
+      letter-spacing: 0.5px;
+    }
+
+    header p {
+      margin: 0 0 1.25rem;
+      color: #e6d5c3;
+      font-style: italic;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: var(--cream);
+      text-decoration: none;
+      font-weight: 600;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      border-bottom-color: var(--accent);
+    }
+
+    main {
+      max-width: 780px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem;
+    }
+
+    main h2 {
+      color: var(--coffee-medium);
+      border-bottom: 2px solid #e6d5c3;
+      padding-bottom: 0.5rem;
+    }
+
+    article {
+      background-color: var(--cream-card);
+      border: 1px solid #eadfd2;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 14px rgba(59, 36, 25, 0.06);
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    article img {
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    article .article-content {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    article h3 {
+      margin: 0 0 0.25rem;
+      color: var(--coffee-dark);
+    }
+
+    article .location-tag {
+      display: inline-block;
+      background-color: #f0e2d2;
+      color: var(--coffee-medium);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      margin-bottom: 0.6rem;
+    }
+
+    article p.description {
+      color: var(--text-muted);
+      margin: 0 0 0.75rem;
+    }
+
+    article a.read-more {
+      color: var(--coffee-light);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    article a.read-more:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-top: 1px solid #eadfd2;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
 
@@ -24,25 +164,31 @@
     <h2>My Top Picks</h2>
 
     <article>
-      <h3>Ayala Triangle Gardens</h3>
-      <p>Park, Makati</p>
-      <p>A green pocket park surrounded by skyscrapers, great for clean urban backdrops any time of day.</p>
       <img src="makati.jpg" alt="Ayala Triangle Gardens in Makati" style="width: 200px; height: 200px; object-fit: cover;">
-      <p><a href="places/ayala-triangle-gardens.html">Read more</a></p>
+      <div class="article-content">
+        <h3>Ayala Triangle Gardens</h3>
+        <span class="location-tag">Park, Makati</span>
+        <p class="description">A green pocket park surrounded by skyscrapers, great for clean urban backdrops any time of day.</p>
+        <a class="read-more" href="places/ayala-triangle-gardens.html">Read more &rarr;</a>
+      </div>
     </article>
 
     <article>
-      <h3>Quezon City Circle</h3>
-      <p>Park, Quezon City</p>
-      <p>Wide open space with a relaxed vibe, perfect for casual candid shots and golden hour walks.</p>
       <img src="qc.jpg" alt="Quezon City Circle park area" style="width: 200px; height: 200px; object-fit: cover;">
+      <div class="article-content">
+        <h3>Quezon City Circle</h3>
+        <span class="location-tag">Park, Quezon City</span>
+        <p class="description">Wide open space with a relaxed vibe, perfect for casual candid shots and golden hour walks.</p>
+      </div>
     </article>
 
     <article>
-      <h3>Parqal Mall</h3>
-      <p>Mall, Pasig</p>
-      <p>Modern architecture and clean lines make this a solid spot for minimalist, editorial-style photos.</p>
       <img src="parq.jpg" alt="Parqal Mall exterior" style="width: 200px; height: 200px; object-fit: cover;">
+      <div class="article-content">
+        <h3>Parqal Mall</h3>
+        <span class="location-tag">Mall, Pasig</span>
+        <p class="description">Modern architecture and clean lines make this a solid spot for minimalist, editorial-style photos.</p>
+      </div>
     </article>
   </main>
 
