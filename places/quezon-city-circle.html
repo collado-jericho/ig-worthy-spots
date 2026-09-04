@@ -102,6 +102,100 @@
     tbody td:first-child { font-weight: 600; color: var(--coffee-dark); }
     tbody td { color: var(--text-muted); border-bottom: 1px solid #eadfd2; }
 
+    h2.form-heading {
+      font-size: 1.5rem;
+      color: var(--coffee-medium);
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    form.suggest-form {
+      background-color: var(--cream-card);
+      border: 1px solid #eadfd2;
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-top: 1.5rem;
+      box-shadow: 0 4px 14px rgba(59, 36, 25, 0.08);
+    }
+
+    form.suggest-form fieldset {
+      border: 1px solid #eadfd2;
+      border-radius: 8px;
+      padding: 1rem 1.25rem 1.25rem;
+      margin: 0 0 1.5rem;
+    }
+
+    form.suggest-form legend {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--coffee-medium);
+      padding: 0 0.5rem;
+    }
+
+    form.suggest-form label {
+      display: block;
+      font-weight: 600;
+      margin-top: 1rem;
+      margin-bottom: 0.35rem;
+      color: var(--coffee-dark);
+    }
+
+    form.suggest-form fieldset label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+      margin-top: 0.6rem;
+    }
+
+    form.suggest-form input[type="text"],
+    form.suggest-form input[type="email"] {
+      width: 100%;
+      padding: 0.65rem 0.75rem;
+      border: 1px solid #d9c8b8;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: inherit;
+      background-color: #fff;
+      color: var(--coffee-dark);
+    }
+
+    form.suggest-form input[type="text"]:focus,
+    form.suggest-form input[type="email"]:focus {
+      outline: 3px solid var(--accent);
+      outline-offset: 1px;
+      border-color: var(--accent);
+    }
+
+    form.suggest-form input[type="radio"],
+    form.suggest-form input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--coffee-light);
+    }
+
+    form.suggest-form button[type="submit"] {
+      margin-top: 0.5rem;
+      background-color: var(--coffee-medium);
+      color: var(--cream);
+      border: none;
+      padding: 0.75rem 1.75rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    form.suggest-form button[type="submit"]:hover {
+      background-color: var(--coffee-dark);
+    }
+
+    form.suggest-form button[type="submit"]:focus {
+      outline: 3px solid var(--accent);
+      outline-offset: 2px;
+    }
+
     footer {
       text-align: center;
       padding: 1.5rem;
@@ -161,6 +255,55 @@
         </tr>
       </tbody>
     </table>
+
+    <h2 class="form-heading">Suggest a Place</h2>
+    <form class="suggest-form">
+      <label for="place-name">Place name</label>
+      <input type="text" id="place-name" name="place-name" required>
+
+      <fieldset>
+        <legend>Category</legend>
+
+        <label for="category-food">
+          <input type="radio" id="category-food" name="category" value="food" checked>
+          Food
+        </label>
+
+        <label for="category-study">
+          <input type="radio" id="category-study" name="category" value="study-spot">
+          Study spot
+        </label>
+
+        <label for="category-outdoors">
+          <input type="radio" id="category-outdoors" name="category" value="outdoors">
+          Outdoors
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>What's good about it</legend>
+
+        <label for="good-affordable">
+          <input type="checkbox" id="good-affordable" name="good-points" value="affordable">
+          Affordable
+        </label>
+
+        <label for="good-wifi">
+          <input type="checkbox" id="good-wifi" name="good-points" value="good-wifi">
+          Good wifi
+        </label>
+
+        <label for="good-quiet">
+          <input type="checkbox" id="good-quiet" name="good-points" value="quiet">
+          Quiet
+        </label>
+      </fieldset>
+
+      <label for="suggest-email">Contact email</label>
+      <input type="email" id="suggest-email" name="suggest-email" required>
+
+      <button type="submit">Send suggestion</button>
+    </form>
   </main>
 
   <footer>
