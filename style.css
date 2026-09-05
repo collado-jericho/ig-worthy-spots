@@ -356,4 +356,33 @@ tbody tr:nth-child(even) {
   background-color: #f5e9db;
 }
 
-tbody
+tbody td:first-child {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+tbody td {
+  color: var(--muted);
+  border-bottom: 1px solid #eadfd2;
+}
+
+/* --- Place detail page image --- */
+main img.place-photo {
+  margin: 0 auto 1.75rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(59, 36, 25, 0.12);
+}
+
+/* --- Suggest link on detail pages --- */
+.suggest-link {
+  display: block;
+  text-align: center;
+  margin-top: 2rem;
+  font-weight: 700;
+  color: var(--coffee-light);
+  text-decoration: none;
+}
+
+.suggest-link:hover {
+  text-decoration: underline;
+}
