@@ -118,12 +118,12 @@ footer {
    4. COMPONENTS
    ========================================= */
 
-/* --- Place entry cards (index.html) --- */
-article {
+/* --- Place cards (index.html) --- */
+.place-card {
   background-color: var(--panel);
-  border: 1px solid #eadfd2;
   border-radius: 12px;
-  padding: 1.5rem;
+  border-left: 6px solid var(--brand);
+  padding: 16px;
   margin-bottom: 1.5rem;
   box-shadow: 0 4px 14px rgba(59, 36, 25, 0.06);
   display: flex;
@@ -132,7 +132,7 @@ article {
   align-items: flex-start;
 }
 
-article img {
+.place-card img {
   border-radius: 8px;
   flex-shrink: 0;
 }
@@ -142,9 +142,11 @@ article img {
   min-width: 200px;
 }
 
-article h3 {
+.place-card h3 {
   margin: 0 0 0.25rem;
-  color: var(--ink);
+  color: var(--coffee-medium);
+  font-size: 1.4rem;
+  font-weight: 700;
 }
 
 .location-tag {
@@ -158,18 +160,18 @@ article h3 {
   margin-bottom: 0.6rem;
 }
 
-article p.description {
+.place-card p.description {
   color: var(--muted);
   margin: 0 0 0.75rem;
 }
 
-article a.read-more {
+.place-card a.read-more {
   color: var(--coffee-light);
   font-weight: 700;
   text-decoration: none;
 }
 
-article a.read-more:hover {
+.place-card a.read-more:hover {
   text-decoration: underline;
 }
 
@@ -250,7 +252,7 @@ fieldset {
 legend {
   font-weight: 700;
   font-size: 1rem;
-  color: var(--coffee-medium);
+  color: var(--brand);
   padding: 0 0.5rem;
 }
 
