@@ -1,0 +1,359 @@
+/* =========================================
+   1. VARIABLES
+   ========================================= */
+:root {
+  --brand: #c47a3d;        /* accent - brand color for links, buttons, borders */
+  --ink: #3b2419;           /* dark ink color for headings/text */
+  --muted: #6b5548;         /* muted grey-brown for secondary text (contrast-checked) */
+  --bg-light: #faf3eb;      /* light cream background */
+  --coffee-medium: #6f4e37; /* medium brown for headings/accents */
+  --coffee-light: #a9744f;  /* lighter brown for links */
+  --panel: #fffaf3;         /* card/panel background */
+}
+
+/* =========================================
+   2. BASE STYLES
+   ========================================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--ink);
+  background-color: var(--bg-light);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================================
+   3. LAYOUT REGIONS
+   ========================================= */
+
+/* --- Header --- */
+header {
+  background-color: var(--ink);
+  color: var(--bg-light);
+  padding: 2rem 1.5rem 1.5rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 0.25rem;
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+}
+
+header p {
+  margin: 0 0 1.25rem;
+  color: #e6d5c3;
+  font-style: italic;
+}
+
+/* --- Nav bar --- */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+nav a {
+  color: var(--bg-light);
+  text-decoration: none;
+  font-weight: 600;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  border-bottom-color: var(--brand);
+}
+
+/* --- Main --- */
+main {
+  max-width: 780px;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+}
+
+main h1,
+main h2 {
+  text-align: center;
+  color: var(--coffee-medium);
+}
+
+main h2 {
+  border-bottom: 2px solid #e6d5c3;
+  padding-bottom: 0.5rem;
+}
+
+main > p {
+  color: var(--muted);
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  border-top: 1px solid #eadfd2;
+  margin-top: 2rem;
+}
+
+/* =========================================
+   4. COMPONENTS
+   ========================================= */
+
+/* --- Place entry cards (index.html) --- */
+article {
+  background-color: var(--panel);
+  border: 1px solid #eadfd2;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 14px rgba(59, 36, 25, 0.06);
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+article img {
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.article-content {
+  flex: 1;
+  min-width: 200px;
+}
+
+article h3 {
+  margin: 0 0 0.25rem;
+  color: var(--ink);
+}
+
+.location-tag {
+  display: inline-block;
+  background-color: #f0e2d2;
+  color: var(--coffee-medium);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 0.6rem;
+}
+
+article p.description {
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+}
+
+article a.read-more {
+  color: var(--coffee-light);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+article a.read-more:hover {
+  text-decoration: underline;
+}
+
+/* --- About page profile section --- */
+section {
+  background-color: var(--panel);
+  border: 1px solid #eadfd2;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 14px rgba(59, 36, 25, 0.06);
+  text-align: center;
+}
+
+section img {
+  margin: 0.5rem auto 1.25rem;
+  border: 3px solid var(--brand);
+}
+
+section h3 {
+  margin: 0 0 0.5rem;
+  color: var(--ink);
+  font-size: 1.4rem;
+}
+
+section p {
+  text-align: left;
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+
+section p:first-of-type {
+  text-align: center;
+  font-style: italic;
+  color: var(--coffee-medium);
+}
+
+/* --- Contact list --- */
+ul.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 2.5rem;
+}
+
+ul.contact-list li {
+  background-color: var(--panel);
+  border: 1px solid #eadfd2;
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+ul.contact-list a {
+  color: var(--coffee-light);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+ul.contact-list a:hover {
+  text-decoration: underline;
+}
+
+/* --- Forms (contact form + suggest-a-place form) --- */
+form {
+  background-color: var(--panel);
+  border: 1px solid #eadfd2;
+  border-radius: 12px;
+  padding: 1.75rem;
+  box-shadow: 0 4px 14px rgba(59, 36, 25, 0.08);
+}
+
+fieldset {
+  border: 1px solid #eadfd2;
+  border-radius: 8px;
+  padding: 1rem 1.25rem 1.25rem;
+  margin: 0 0 1.5rem;
+}
+
+legend {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--coffee-medium);
+  padding: 0 0.5rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.35rem;
+  color: var(--ink);
+}
+
+fieldset label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  margin-top: 0.6rem;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #d9c8b8;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: #fff;
+  color: var(--ink);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--brand);
+  outline-offset: 2px;
+  border-color: var(--brand);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--coffee-light);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+button[type="submit"] {
+  margin-top: 0.5rem;
+  background-color: var(--coffee-medium);
+  color: var(--bg-light);
+  border: none;
+  padding: 0.75rem 1.75rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--ink);
+}
+
+button[type="submit"]:focus {
+  outline: 3px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* --- Tables (place detail tables) --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  background-color: var(--panel);
+  border: 1px solid #eadfd2;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.85rem 1.1rem;
+}
+
+thead th {
+  background-color: var(--coffee-medium);
+  color: var(--bg-light);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f5e9db;
+}
+
+tbody

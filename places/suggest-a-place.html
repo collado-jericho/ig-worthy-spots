@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suggest a Place - IG Worthy Spots</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header>
+    <h1>IG Worthy Spots</h1>
+    <p>A guide to the most photogenic places to visit, from hidden corners to iconic backdrops.</p>
+
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Suggest a Place</h2>
+    <p>Know a photogenic spot I should check out? Tell me about it.</p>
+
+    <form class="suggest-form">
+      <label for="place-name">Place name</label>
+      <input type="text" id="place-name" name="place-name" required>
+
+      <fieldset>
+        <legend>Category</legend>
+
+        <label for="category-food">
+          <input type="radio" id="category-food" name="category" value="food" checked>
+          Food
+        </label>
+
+        <label for="category-study">
+          <input type="radio" id="category-study" name="category" value="study-spot">
+          Study spot
+        </label>
+
+        <label for="category-outdoors">
+          <input type="radio" id="category-outdoors" name="category" value="outdoors">
+          Outdoors
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>What's good about it</legend>
+
+        <label for="good-affordable">
+          <input type="checkbox" id="good-affordable" name="good-points" value="affordable">
+          Affordable
+        </label>
+
+        <label for="good-wifi">
+          <input type="checkbox" id="good-wifi" name="good-points" value="good-wifi">
+          Good wifi
+        </label>
+
+        <label for="good-quiet">
+          <input type="checkbox" id="good-quiet" name="good-points" value="quiet">
+          Quiet
+        </label>
+      </fieldset>
+
+      <label for="suggest-email">Contact email</label>
+      <input type="email" id="suggest-email" name="suggest-email" required>
+
+      <button type="submit">Send suggestion</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 IG Worthy Spots. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
