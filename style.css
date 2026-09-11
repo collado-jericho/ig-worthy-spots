@@ -98,7 +98,7 @@ img {
 
 /* --- Main --- */
 main {
-  max-width: 780px;
+  max-width: 960px;
   margin: 2.5rem auto;
   padding: 0 1.5rem;
 }
@@ -132,28 +132,36 @@ footer {
    4. COMPONENTS
    ========================================= */
 
-/* --- Place cards (index.html) --- */
+/* --- Place card grid (index.html) - Flexbox layout --- */
+.place-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
 .place-card {
+  flex: 1 1 240px;
   background-color: var(--panel);
   border-radius: 12px;
   border-left: 6px solid var(--brand);
   padding: 16px;
-  margin-bottom: 1.5rem;
   box-shadow: 0 4px 14px rgba(59, 36, 25, 0.06);
   display: flex;
-  gap: 1.25rem;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .place-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
   border-radius: 8px;
-  flex-shrink: 0;
 }
 
 .article-content {
   flex: 1;
-  min-width: 200px;
+  display: flex;
+  flex-direction: column;
 }
 
 .place-card h3 {
@@ -172,17 +180,20 @@ footer {
   padding: 0.2rem 0.6rem;
   border-radius: 999px;
   margin-bottom: 0.6rem;
+  align-self: flex-start;
 }
 
 .place-card p.description {
   color: var(--muted);
   margin: 0 0 0.75rem;
+  flex: 1;
 }
 
 .place-card a.read-more {
   color: var(--coffee-light);
   font-weight: 700;
   text-decoration: none;
+  align-self: flex-start;
 }
 
 .place-card a.read-more:hover {
