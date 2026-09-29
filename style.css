@@ -428,17 +428,18 @@ button[type="submit"]:focus {
 }
 
 /* --- Tables (place detail tables) --- */
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 2rem;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 2rem;
   background-color: var(--panel);
   border: 1px solid #eadfd2;
   border-radius: 8px;
   overflow: hidden;
-  display: block;
-  overflow-x: auto;
-  white-space: nowrap;
 }
 
 th, td {
