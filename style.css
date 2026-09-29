@@ -24,10 +24,12 @@ body {
   line-height: 1.6;
   color: var(--ink);
   background-color: var(--bg-light);
+  overflow-x: hidden;
 }
 
 img {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -35,15 +37,26 @@ img {
    3. LAYOUT REGIONS
    ========================================= */
 
-/* --- Page grid skeleton (Lesson 7.4) --- */
+/* --- Page grid skeleton (mobile-first, Lesson 7.5) --- */
 .page {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 1fr;
   grid-template-areas:
-    "masthead masthead"
-    "side     main"
-    "foot     foot";
+    "masthead"
+    "main"
+    "side"
+    "foot";
   gap: 16px;
+}
+
+@media (min-width: 700px) {
+  .page {
+    grid-template-columns: 220px 1fr;
+    grid-template-areas:
+      "masthead masthead"
+      "side     main"
+      "foot     foot";
+  }
 }
 
 .site-header { grid-area: masthead; }
@@ -79,6 +92,7 @@ footer { grid-area: foot; }
 /* --- Nav bar --- */
 .site-header nav ul {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   list-style: none;
   padding: 0;
@@ -110,12 +124,13 @@ footer { grid-area: foot; }
   font-weight: 700;
   text-align: center;
   letter-spacing: 0.5px;
+  padding: 0 1rem;
 }
 
 /* --- Main --- */
 main {
   max-width: 100%;
-  padding: 1.5rem 0;
+  padding: 1.5rem;
 }
 
 main h1,
@@ -189,7 +204,7 @@ aside p {
    4. COMPONENTS
    ========================================= */
 
-/* --- Place card grid (index.html) - Flexbox layout --- */
+/* --- Place card grid (index.html) - Flexbox layout, wraps responsively --- */
 .place-grid {
   display: flex;
   flex-wrap: wrap;
@@ -198,6 +213,7 @@ aside p {
 
 .place-card {
   flex: 1 1 240px;
+  max-width: 100%;
   background-color: var(--panel);
   border-radius: 12px;
   border-left: 6px solid var(--brand);
@@ -320,7 +336,7 @@ form {
   background-color: var(--panel);
   border: 1px solid #eadfd2;
   border-radius: 12px;
-  padding: 1.75rem;
+  padding: 1.5rem;
   box-shadow: 0 4px 14px rgba(59, 36, 25, 0.08);
 }
 
@@ -420,6 +436,9 @@ table {
   border: 1px solid #eadfd2;
   border-radius: 8px;
   overflow: hidden;
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 th, td {
@@ -450,8 +469,11 @@ tbody td {
   border-bottom: 1px solid #eadfd2;
 }
 
-/* --- Place detail page image --- */
+/* --- Place detail page image (responsive, no fixed pixel width) --- */
 main img.place-photo {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
   margin: 0 auto 1.75rem;
   border-radius: 10px;
   box-shadow: 0 4px 14px rgba(59, 36, 25, 0.12);
