@@ -27,47 +27,43 @@ if (countEl) {
   countEl.textContent = 'Places reviewed: ' + placeCount;
 }
 
-// ===== Decision 1: rating label (if / else if / else) =====
-const rating = 4.5; // out of 5
-let ratingLabel;
-
-if (rating >= 4) {
-  ratingLabel = 'Highly recommended';
-} else if (rating >= 2.5) {
-  ratingLabel = 'Worth a visit';
-} else {
-  ratingLabel = "Only if you're nearby";
-}
-
-const ratingEl = document.getElementById('rating-label');
-if (ratingEl) {
-  ratingEl.textContent = rating + ' / 5 — ' + ratingLabel;
-}
-
-// ===== Decision 2: budget check (&& plus ternary) =====
-const priceLevel = 0;      // 0 = free, 1 = cheap, 2 = moderate, 3 = pricey
-const isOpenNow = true;
-const goodForNow = priceLevel <= 2 && isOpenNow === true;
-const budgetNote = goodForNow ? 'Good option right now' : 'Maybe another time';
-
-const budgetEl = document.getElementById('budget-note');
-if (budgetEl) {
-  budgetEl.textContent = budgetNote;
-}
-
-// ===== Decision 3: distance note (boolean plus ternary) =====
-const isWalkable = true;
-const distanceNote = isWalkable === true ? 'Walking distance' : 'Better to commute';
-
-const distanceEl = document.getElementById('distance-note');
-if (distanceEl) {
-  distanceEl.textContent = distanceNote;
-}
-
 // ===== Console logs =====
 console.log('Guide name:', guideName);
 console.log('Current year:', currentYear);
 console.log('Places counted:', placeCount);
-console.log('Rating label:', ratingLabel);
-console.log('Good for now:', goodForNow);
-console.log('Distance note:', distanceNote);
+
+// ===== Place verdict (only runs on pages that have a verdict box) =====
+const verdictEl = document.getElementById('verdict');
+
+if (verdictEl) {
+  // Values come from data- attributes, so they arrive as strings
+  const rating = Number(verdictEl.dataset.rating);
+  const priceLevel = Number(verdictEl.dataset.priceLevel);
+  const isOpenNow = verdictEl.dataset.open === 'true';
+  const isWalkable = verdictEl.dataset.walkable === 'true';
+
+  // Decision 1: rating label (if / else if / else)
+  let ratingLabel;
+  if (rating >= 4) {
+    ratingLabel = 'Highly recommended';
+  } else if (rating >= 2.5) {
+    ratingLabel = 'Worth a visit';
+  } else {
+    ratingLabel = "Only if you're nearby";
+  }
+
+  // Decision 2: budget check (&& plus ternary)
+  const goodForNow = priceLevel <= 2 && isOpenNow === true;
+  const budgetNote = goodForNow ? 'Good option right now' : 'Maybe another time';
+
+  // Decision 3: distance note (boolean plus ternary)
+  const distanceNote = isWalkable === true ? 'Walking distance' : 'Better to commute';
+
+  document.getElementById('rating-label').textContent = rating + ' / 5 — ' + ratingLabel;
+  document.getElementById('budget-note').textContent = budgetNote;
+  document.getElementById('distance-note').textContent = distanceNote;
+
+  console.log('Rating label:', ratingLabel);
+  console.log('Good for now:', goodForNow);
+  console.log('Distance note:', distanceNote);
+}
