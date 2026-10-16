@@ -273,6 +273,38 @@ aside p {
   text-decoration: underline;
 }
 
+/* --- Quick verdict box (place detail page) --- */
+.verdict {
+  background-color: var(--panel);
+  border: 1px solid #eadfd2;
+  border-left: 6px solid var(--brand);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin-top: 2rem;
+  box-shadow: 0 4px 14px rgba(59, 36, 25, 0.06);
+}
+
+.verdict h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  border-bottom: none;
+}
+
+.verdict ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--muted);
+}
+
+.verdict li {
+  padding: 0.35rem 0;
+}
+
+.verdict strong {
+  color: var(--ink);
+}
+
 /* --- About page profile section --- */
 section {
   background-color: var(--panel);
